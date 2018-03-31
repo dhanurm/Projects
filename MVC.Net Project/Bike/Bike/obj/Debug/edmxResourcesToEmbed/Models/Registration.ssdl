@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BikeInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BikeData1">
+    <Key>
+      <PropertyRef Name="BikeId" />
+    </Key>
+    <Property Name="BikeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BikeName" Type="varchar" MaxLength="100" />
+    <Property Name="Color" Type="varchar" MaxLength="100" />
+    <Property Name="MaxPower" Type="varchar" MaxLength="100" />
+    <Property Name="EngineType" Type="varchar" MaxLength="100" />
+    <Property Name="MaxSpeed" Type="varchar" MaxLength="100" />
+    <Property Name="Aversge" Type="nvarchar" MaxLength="100" />
+    <Property Name="Price" Type="money" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryName" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registartion">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Address1" Type="varchar" MaxLength="100" />
+    <Property Name="Address2" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="Confirm_Password" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__BikeData1__Categ__1273C1CD">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="BikeData1" Type="Self.BikeData1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryName" />
+      </Principal>
+      <Dependent Role="BikeData1">
+        <PropertyRef Name="CategoryName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BikeInfoModelStoreContainer">
+    <EntitySet Name="BikeData1" EntityType="Self.BikeData1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registartion" EntityType="Self.Registartion" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BikeData1__Categ__1273C1CD" Association="Self.FK__BikeData1__Categ__1273C1CD">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="BikeData1" EntitySet="BikeData1" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

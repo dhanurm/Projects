@@ -1,0 +1,66 @@
+﻿@model Bike.Models.Registartion
+
+@{
+    ViewBag.Title = "LogIn";
+}
+
+@using (Html.BeginForm())
+{
+
+            <style>
+                .sj {
+                    background-color: lightgrey;
+                    margin-top: 30px;
+                    width: 420px;
+                    padding: 50px;
+                    margin-left: 400px;
+                    border-radius: 10px;
+                }
+            </style>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+            <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+            <link href="~/Content/placeholder.css" rel="stylesheet" type="text/css" />
+            <fieldset>
+                <div class="sj">
+    <fieldset class="formRow">
+        <div class="formRow--item">
+            <div class="editor-label">
+                <label for="Email" class="formRow--input-wrapper js-inputWrapper">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "formRow--input js-input", placeholder = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+
+
+    <fieldset class="formRow">
+        <div class="formRow--item">
+            <div class="editor-label">
+                <label for="Password" class="formRow--input-wrapper js-inputWrapper">
+
+                    @Html.PasswordFor(u => u.Password, new { @class = "formRow--input js-input", placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password)
+
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+
+        <input type="submit" style="margin-left:50px;" class="button" value="Submit" />
+
+    </div>
+</div>
+
+        
+    <script type="text/javascript" src="~/Scripts/hide.js"></script>
+        <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/palceholder.js"></script>
+                    </fieldset>
+            
+}

@@ -1,0 +1,274 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .top{
+        margin-top:20px;
+    }
+</style>
+<!-- Header
+================================================== -->
+<header id="nino-header">
+    <div id="nino-headerInner">
+        <nav id="nino-navbar" class="navbar navbar-default" role="navigation">
+            <div class="container">
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nino-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Century", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    <div style="width:auto;text-decoration-color:white;font-size:15px;">
+                        @if (Request.IsAuthenticated)
+                        {
+                            <strong>@Html.Encode(User.Identity.Name)</strong>
+                            @Html.ActionLink("Log Out", "Logout", "Registration")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Register", "Register", "Registration" )
+                            <span> | </span>
+                            @Html.ActionLink("Log In", "Login", "Registration")
+                        }
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+
+                <div class="nino-menuItem pull-right">
+                    <div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
+
+                        <ul class="nav navbar-nav">
+
+                            <li class="active"><a href="#nino-header">Home <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#nino-story">About</a></li>
+                            <li><a href="#nino-portfolio">Contact</a></li>
+                            <li><a href="#nino-latestBlog">Bike</a></li>
+                            
+
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                    <ul class="nino-iconsGroup nav navbar-nav">
+                        <li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
+                    </ul>
+
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+</header><!--/#header-->
+<section id="nino-slider" class="carousel slide container" data-ride="carousel">
+      <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <h2 class="nino-sectionHeading">
+                    <span class="nino-subHeading">Bike ShowRoom</span>
+                    Welcome <br>to Century
+                </h2>
+            </div>
+            <div class="item ">
+                <div class="nino-sectionHeading">
+                    <img src="~/Image/Amazing_Bike_Stunt_Images.jpg" width="1470" height="440" ; />
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="nino-sectionHeading">
+                    <img src="~/Image/Harley_Davidson_Bike_Ridding_Wallpaper.jpg" width="1470" height="440" ; />
+                </div>
+            </div>
+            <div class="item">
+                <div class="nino-sectionHeading">
+                    <img src="~/Image/New_Bike_HD_Photo_Background.jpg" width="1470" height="440" ; />
+                </div>
+            </div>
+
+        </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+
+        </div>
+</section>
+
+
+<!-- Story About Us
+================================================== -->
+<section id="nino-story">
+        <style>
+            .Rs {
+                background-color:aliceblue;
+                border-radius: 40px;
+                margin-top:10px;
+                width: 80%;
+                color:black;
+                padding: 150px;
+                margin: 130px;
+            }
+        </style>
+
+        <div class="Rs">
+            <h1>About Century</h1>
+            <br />
+            <br />
+            <div class="format-content margin-top10">
+                <p style="font-size:18px">
+                    Bikers of the world, welcome home to tvs showroom,the latest channel from Car.com in its two- wheeler avatar! Riding on to
+                    the success of Car and your overwhelming patronage, we now launch our two-wheeler portal tvs bike fuelled by the same zeal
+                    to simplify the cumbersome and complex ecosystem of bikes. Now your passion for riding has a new patron in tvs bike with
+                    unparalleled quantum of unbiased reviews, in-depth research pages,latest news, discussion forums, and more. In short, all
+                    that will fuel your appetite for the bike of your dreams and let you research,buy, sell and come together to discuss and 
+                    talk about their bikes.
+                </p>
+                <p style="font-size:18px">
+                    This initiative comes in beta version where your insights and feedback will help us improve your youngest biking partner tvsbike and delight you all the more.
+                    Thus, each time you read ‘Page not found’, ‘Error’, etc. please bear with us as we are constantly working to provide you the best of features and experiences.
+
+
+
+            </div>
+        </div>
+</section>    
+<!-- Portfolio
+================================================== -->
+<section id="nino-portfolio">
+
+    <style>
+        .sj {
+            background-color: lightblue;
+            width: 300px;
+            padding: 60px;
+            margin: 40px;
+            border: 5px solid blue;
+            box-sizing: border-box;
+        }
+    </style>
+    <div class="container">
+        <div class="abc sj ">
+
+            <h3>ADDRESS</h3>
+            <p>
+
+                TVS MOTOR CO LTD,<br />
+                818 bhandarkar institute Road,<br />
+                pune 4.<br />
+            </p>
+        </div>
+
+
+
+        <div class="abc sj ">
+            <h3>CONTACT</h3>
+            Tel: 25652137<br /><br/>
+            Fax: (022) 6645 9665<br />
+            mobile:+91 92254 07000<br />
+
+        </div>
+
+
+
+        <div class="abc sj">
+            <h3>MAIL ID</h3>
+            Email: century.tvs@gmail.com<br />
+            Working Hours: 10 a.m. - 7 p.m.
+        </div>
+    </div>
+    <div id="nino-map">
+    <div class="container">
+        <h2 class="nino-sectionHeading ">
+            <span class="text" style="color:white">Open map</span>
+            <span class="text" style="display: none;">Close map</span>
+        </h2>
+        <div class="mapWrap">
+            <a href="https://goo.gl/maps/XvYi1Kpj87p"> <h3>Get Direction On Map</h3>
+                </a>
+                <iframe src="https://www.mapsdirections.info/en/custom-google-maps/map.php?width=100%&height=600&hl=ru&q=818%2C%20Bhandarkar%20Rd%2C%20Deccan%20Gymkhana%2C%20Pune%2C%20Maharashtra%20411004+(Century)&ie=UTF8&t=&z=14&iwloc=A&output=embed" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+         </div>
+   
+
+</section><!--/#nino-portfolio-->
+<!--#Bikes------------------------>
+
+<section id="nino-latestBlog">
+    <div class="container">
+        <h2 class="nino-sectionHeading">
+            <span class="nino-subHeading">Our Bikes</span>
+            Latest Bike
+        </h2>
+        <div class="abc">
+           <img src="~/Image/Apache Rtr/tvs-apache-rtr-160-red-1486702387974.jpg" alt="">
+            <p>
+                <h3>
+                    @Html.ActionLink("Apache-RTR", "Apache", "Bike")</h3>
+</p>
+        </div>
+        <div class="abc"><img src="~/Image/Jupiter/tvs-jupiter-matte-blue-1502444775690.jpg"  alt="">
+            <h3><a href="">Jupiter</a></h3>
+            <p >
+                TVS-Jupiter-matte-blue</br>
+                Color:blue;
+            </p>
+        </div>
+        <div class="abc">
+            <a href="#"><img src="~/Image/Scooty/tvs-scooty-zest-110-matte-yellow-1495537931395.jpg" alt=""></a>
+           
+        </div>
+
+        <div class="abc">
+            <a href="#"><img src="~/Image/sport/tvs-sport-electric-green-1486703497454.jpg" alt=""></a>
+            <h3 class="articleTitle"><a href="">Sport</a></h3>
+            <p class="articleDesc">
+                TVS-Sport-electric-Green
+                Color:green;
+            </p>
+        </div>
+
+   </div>
+
+</section><!--/#nino-latestBlog--><!-- Our Team
+================================================== -->
+<!-- Search Form - Display when click magnify icon in menu
+================================================== -->
+<form action="" id="nino-searchForm">
+    <input type="text" placeholder="Search..." class="form-control nino-searchInput">
+    <i class="mdi mdi-close nino-close"></i>
+</form><!--/#nino-searchForm-->
+
+<!-- javascript -->
+<script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.hoverdir.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="~/Scripts/unslider-min.js"></script>
+<script type="text/javascript" src="~/Scripts/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="~/Scripts/modernizr.custom.97074.js"></script>
+<script type="text/javascript" src="~/Scripts/template.js"></script>
+
+
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!-- css3-mediaqueries.js for IE less than 9 -->
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->

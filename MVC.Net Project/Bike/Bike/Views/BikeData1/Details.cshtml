@@ -1,0 +1,82 @@
+﻿@model Bike.Models.BikeData1
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BikeData1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BikeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BikeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxPower)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxPower)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EngineType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EngineType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxSpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aversge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aversge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BikeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

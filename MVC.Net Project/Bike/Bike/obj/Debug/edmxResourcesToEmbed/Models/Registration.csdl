@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BikeInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BikeData1">
+    <Key>
+      <PropertyRef Name="BikeId" />
+    </Key>
+    <Property Name="BikeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BikeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MaxPower" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EngineType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MaxSpeed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Aversge" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__BikeData1__Categ__1273C1CD" FromRole="BikeData1" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryName" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BikeData1" Relationship="Self.FK__BikeData1__Categ__1273C1CD" FromRole="Category" ToRole="BikeData1" />
+  </EntityType>
+  <EntityType Name="Registartion">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Confirm_Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__BikeData1__Categ__1273C1CD">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="BikeData1" Type="Self.BikeData1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryName" />
+      </Principal>
+      <Dependent Role="BikeData1">
+        <PropertyRef Name="CategoryName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BikeInfoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BikeData1" EntityType="Self.BikeData1" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Registartions" EntityType="Self.Registartion" />
+    <AssociationSet Name="FK__BikeData1__Categ__1273C1CD" Association="Self.FK__BikeData1__Categ__1273C1CD">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="BikeData1" EntitySet="BikeData1" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

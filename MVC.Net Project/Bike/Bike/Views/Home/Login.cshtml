@@ -1,0 +1,72 @@
+﻿@model Bike.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <hr />
+    <style>
+        .sj {
+            background-color: lightgrey;
+            width: 410px;
+            padding: 40px;
+            margin-left: 450px;
+            margin-top:150px;
+            border-radius:10px;
+
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/placeholder.css" rel="stylesheet" type="text/css" />
+    <style>
+        
+    </style>
+
+    <div class="sj">
+        <h4 style="text-align:center">Login</h4>
+        <div class="container">
+            <div class="wrapper">
+
+
+
+                <fieldset class="formRow">
+                    <div class="formRow--item">
+                        <label for="EmailId" class="formRow--input-wrapper js-inputWrapper">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "formRow--input js-input", id = "inputEmail", placeholder = "Username/EmailId" })
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="formRow">
+                    <div class="formRow--item">
+                        <label for="Password" class="formRow--input-wrapper js-inputWrapper">
+                            @Html.PasswordFor(m => m.Password, new { @class = "formRow--input js-input", placeholder = "Password" })
+                        </label>
+                    </div>
+                </fieldset>
+                
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="button" style="margin-left:70px;" class="button" value="Submit">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="~/Scripts/hide.js"></script>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/palceholder.js"></script>
+
+
+}
+
