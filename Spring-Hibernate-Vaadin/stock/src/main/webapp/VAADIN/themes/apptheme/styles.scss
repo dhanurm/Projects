@@ -1,0 +1,52 @@
+@import "addons.scss";
+@import "apptheme.scss";
+@import "designs.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in apptheme.scss */
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
+	.apptheme .signup-page {
+		.signup-information {
+			display: none;
+			width: 0%;
+		}
+		
+		.signup-form-container {
+			width: 100%;
+		}
+	
+		.signup-page-header {
+			.v-label {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.apptheme .signup-page {
+		.signup-information {
+			width: 30%;
+		}
+		
+		.signup-form-container {
+			width: 70%;
+		}
+	
+		.signup-page-header {
+			.v-label {
+				font-size: 25px;
+			}
+		}
+	}
+}
+
+.apptheme {
+  @include vaadin-crud-template;
+  @include addons;
+  @include apptheme;
+  
+}
+
+
